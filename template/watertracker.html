@@ -1,0 +1,175 @@
+{% extends 'basis.html' %}
+{% load static %}
+{% block body %}
+
+
+<!-- Page Title -->
+<div class="page-title dark-background" data-aos="fade" style="background-image>
+  <div class="container position-relative">
+    <h1>Contribute to Water Pollution Tracking</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="current">Water Tracker</li>
+      </ol>
+    </nav>
+  </div>
+</div><!-- End Page Title -->
+
+<section class="h-100 h-custom" style="background-color: #ffffff;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="{% static 'assets/img/Trackers/img_3.png' %}" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Water Pollution Monitoring Sheet</h3>
+
+            <h4 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">General Information</h4>
+
+            <form method="POST">
+              {% csrf_token %}
+
+              <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="form3Example1q" >Full name of collector</label>
+                <input type="text" id="form3Example1q" name="name" class="form-control" required="required" />
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="number" class="form-control" name="latitude" required="required" />
+                    <label class="form-label">Latitude</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="number" class="form-control" name="longitude" required="required" />
+                    <label class="form-label">Longitude</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline datepicker">
+                    <input type="date" class="form-control" id="datePicker1" name="date" required="required" />
+                    <label class="form-label">Date of data collection</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline datepicker">
+                    <input type="time" class="form-control" id="datePicker2" name="time" required="required" />
+                    <label class="form-label">Time of data collection</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">What is the water body type?</label>
+                <select class="form-select" name="waterbody" required="required">
+                  <option value="river" disabled selected>Select</option>
+                  <option value="river">River</option>
+                  <option value="pond">Pond</option>
+                  <option value="sea">Sea</option>
+                  <option value="lake">Lake</option>
+                  <option value="well">Well</option>
+                  <option value="dam">Dam</option>
+
+                </select>
+              </div>
+
+              <h4>Physical Observation</h4>
+
+              <div class="form-outline mb-4">
+
+                <select class="form-select" name="watercolour" required="required"><label class="form-label">What is the water color as you observe it?</label>
+                  <option value="" disabled selected>Select</option>
+                  <option value="brownish">Brownish</option>
+                  <option value="greenish">Greenish</option>
+                  <option value="foamy">Foamy</option>
+                </select>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">Any unusual smell?</label>
+                <select class="form-select" name="unusualsmell" required="required">
+
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">If yes above, describe the odor.</label>
+                <input type="text" class="form-control" name="odor" placeholder="e.g. rotten eggs, chemical smell, etc." />
+              </div>
+
+             <div class="form-outline mb-4">
+  <label class="form-label" for="pollutionType">Any form of pollution evident at the site?</label>
+  <select class="form-select" id="pollutionType" name="pollutiontype" required="required" multiple>
+    <option value="floating_debris">Floating debris</option>
+    <option value="oil_sheen">Oil sheen</option>
+    <option value="dead_fish">Dead fish or wildlife</option>
+    <option value="sedimentation">Sedimentation</option>
+    <option value="other">Other</option>
+  </select>
+  <small class="text-muted">Hold down Ctrl (or Cmd on Mac) to select multiple options.</small>
+</div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">Measure and record water turbidity</label>
+                <input type="number" class="form-control" name="turbidity" required="required" />
+              </div>
+
+              <h4>Chemical Parameters</h4>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">What is the water pH recorded?</label>
+                <input type="number" class="form-control" name="ph" required="required" />
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">What is the nitrates concentration (mg/L)?</label>
+                <input type="number" class="form-control" name="nitrates" required="required" />
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">What is the phosphate concentration (mg/L)?</label>
+                <input type="number" class="form-control" name="phosphates" required="required" />
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">What is the dissolved oxygen level?</label>
+                <input type="number" class="form-control" name="oxygen" required="required" />
+              </div>
+
+              <h4>Biological Observation</h4>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">Can you observe any algae blooms present?</label>
+                <select class="form-select" name="algaeblooms" required="required">
+                    <option value=""  disabled selected>select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label">Can you observe the presence of aquatic life?</label>
+                <select class="form-select" name="aquaticlife" required="required">
+                    <option value="select" disabled selected>select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'basis.html' %}
+{% load static %}
+
+{% block body %}
+<div class="page-title dark-background" style="background-image: url(assets/img/page-title-bg.webp);">
+  <div class="container position-relative">
+    <h1>Contribute to water pollution Tracking</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="current">Water Tracker</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section class="h-100 h-custom" style="background-color: #074c3a;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="{% static 'assets/img/Trackers/img_3.png' %}" class="w-100" alt="Sample photo">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4">Water Pollution Monitoring Sheet</h3>
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

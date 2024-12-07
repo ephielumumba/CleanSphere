@@ -1,0 +1,67 @@
+{% extends 'basis.html' %}
+{% load static %}
+{% block body %}
+    <h1 class="text-center">WATER POLLUTION TRACKING DATA</h1>
+    <br><br>
+    <table class="table container table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Water Body</th>
+        <th>Water Colour</th>
+        <th>Smell</th>
+        <th>Odor Description</th>
+        <th>Pollution Evidence</th>
+        <th>Turbidity</th>
+        <th>PH</th>
+        <th>Nitrates</th>
+        <th>Phosphates</th>
+        <th>Oxygen</th>
+        <th>Algea Blooms</th>
+        <th>Aquatic Life</th>
+        <th>Action</th>
+
+    </tr>
+    {% for x in waterdata %}
+        <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.latitude }}</td>
+            <td>{{ x.longitude }}</td>
+            <td>{{ x.date }}</td>
+            <td>{{ x.time }}</td>
+            <td>{{ x.waterbody }}</td>
+            <td>{{ x.water_colour }}</td>
+            <td>{{ x.smell }}</td>
+            <td>{{ x.odor_description }}</td>
+            <td>{{ x.pollution_evidence }}</td>
+            <td>{{ x.turbidity }}</td>
+            <td>{{ x.ph }}</td>
+            <td>{{ x.nitrates }}</td>
+            <td>{{ x.phosphates }}</td>
+            <td>{{ x.oxygen }}</td>
+            <td>{{ x.algae_blooms }}</td>
+            <td>{{ x.aquatic_life  }}</td>
+        <td>
+            <a href="" class="btn btn-success">EDIT</a>
+            <a href="/delete/{{ x.id }}" class="btn btn-outline-danger">DELETE</a>
+        </td>
+        
+        
+        </tr>
+    	
+    {% endfor %}
+
+    
+    </table>
+    
+    
+    
+
+
+
+
+
+{% endblock %}

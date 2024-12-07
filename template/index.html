@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CleanSphere</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+    {% load static %}
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: AgriCulture
+  * Template URL: https://bootstrapmade.com/agriculture-bootstrap-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="{% static 'assets/img/logo.png' %}" alt="CleanSphere">
+        <!-- <h1 class="sitename">AgriCulture</h1>  -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home' %}" class="active">Home</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
+          <li><a href="{% url 'resources' %}">Resources</a></li>
+          <li><a href="{% url 'donate' %}">Donate</a></li>
+          <li class="dropdown"><a href="#"><span>Contribute Data</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'watertracker' %}">Water Pollution Tracker</a></li>
+              <li><a href="#">Soil Pollution Tracker</a></li>
+              <li><a href="#">Air Pollution Tracker</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="{% static 'assets/img/hero_1.png' %}" alt="">
+          <div class="carousel-container">
+            <h2>Empowering Communities to take charge of their environment.</h2>
+            <p>In the phase of increased pollution, communities health in paramount and they play a critical role in ensuring cleaner environment to ensure public health.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero_2.png' %}" alt="">
+          <div class="carousel-container">
+            <h2>Cleaner future</h2>
+            <p>Cleaner future begins with you advocating for renewable energy.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero_3.png' %}" alt="">
+          <div class="carousel-container">
+            <h2>Citizen Science led projects</h2>
+            <p>Empowering communities to contribute to data that influence policy.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero_4.png' %}" alt="">
+          <div class="carousel-container">
+            <h2>Air, Water and soil are the essential natural resources.</h2>
+            <p>The earth is the only planet that is suitable for life in this universe. Life exists because of its interaction with the resources the earth provides. It is this interaction that creates a balance between the living and the nonliving resources and sustains both of them. The three most important nonliving resources for us is the air we breathe, the water we drink and the land we live on. Without these three resources, we cannot exist. In this section, we will discuss the importance of air, water, and soil for the sustenance of living beings.
+
+</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero_5.png' %}" alt="">
+          <div class="carousel-container">
+            <h2>Clean environment for all.</h2>
+            <p>Soil pollution is caused by the presence of chemicals or other alteration in the natural soil environment. Resulting in a change of the soil quality is likely to affect the normal use of the soil or endangering public health and the living environment. Soil is upper layer of earth crust, contains organic matter and other minerals. Dumping of wastes, garbage, rubbish like glass, plastics, metallic cans, papers, cloth rags, containers causes soil pollution. Other causes include discharge of Industrial wastes, fly ash from Thermal power plants, sewage sludge and radioactive wastes, fertilizers and pesticides on soils. Effects are reduction of soil productivity, adverse effect on soil flora and fauna, sludge contains worms, bacteria and pathogens that are detrimental to public health, radioactive wastes enter food chain, untreated products and wastewater before discharge.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Impact</h2>
+        <p></p>
+      </div><!-- End Section Title -->
+      <div class="content">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-lg-3 col-md-6">
+              <div class="service-item">
+                <span class="number">01</span>
+                <div class="service-item-icon">
+                    <img src="{% static 'assets/img/data.png' %}" alt="">
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Data Driven Achievements</h3>
+                  <p>
+                    Mapped over 1,500 data points across 30 Countries
+                  </p>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="service-item">
+                <span class="number">02</span>
+                <div class="service-item-icon">
+
+
+                </div>
+                <div class="service-item-content">
+                    <img src="{% static 'assets/img/water.png' %}" alt="">
+                  <h3 class="service-heading">Water</h3>
+                  <p>
+                   10 million litters of water restored
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="service-item">
+                <span class="number">03</span>
+                <div class="service-item-icon">
+                    <img src="{% static 'assets/img/CO2.png' %}" alt="">
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Fighting climate change</h3>
+                  <p>
+                   5,000 tonnes of CO2 emission reduced
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="service-item">
+                <span class="number">04</span>
+                <div class="service-item-icon">
+                    <img src="{% static 'assets/img/reports.png' %}" alt="">
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Reports</h3>
+                  <p>
+                   500 detailed reports
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="service-item">
+                <span class="number">05</span>
+                <div class="service-item-icon">
+                    <img src="{% static 'assets/img/policy.png' %}" alt="">
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Policy Influence</h3>
+                  <p>
+                    Our comprehensive pollution data has contributed in the passing of the Clean Industrial Waste Reduction Policy in East Africa.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="service-item">
+                <span class="number">06</span>
+                <div class="service-item-icon">
+                    <img src="{% static 'assets/img/scientists.png' %}" alt="">
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Citezen scientists</h3>
+                  <p>
+                    over 50,000 citizen scientists
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="service-item">
+                <span class="number">07</span>
+                <div class="service-item-icon">
+                    <img src="{% static 'assets/img/regions.png' %}" alt="">
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Global & Local reach</h3>
+                  <p>
+                  Currently in 30 Countries
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="service-item">
+                <span class="number">08</span>
+                <div class="service-item-icon">
+                    <img src="{% static 'assets/img/environment.png' %}" alt="">
+                </div>
+                <div class="service-item-content">
+                  <h3 class="service-heading">Environmental Impact</h3>
+                  <p>
+                      20% reduction in Nitrates and 15% reduction in Phosphate
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0"><br><br><br>
+              <img src="{% static 'assets/img/img_sq_5.png' %}" alt="Image " class="img-fluid img-overlap" data-aos="zoom-out"><br><br>
+                <br><br><br>
+                <br><br><br>
+                <br><br><br>
+                   <img src="{% static 'assets/img/img_sq_1.png' %}" alt="Image " class="img-fluid img-overlap" data-aos="zoom-out">
+            </div>
+            <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="content-subtitle text-white opacity-50">CleanSphere</h3>
+              <h2 class="content-title mb-4">
+                More than <strong>10 year experience</strong> in pollution tracking
+              </h2>
+              <p class="opacity-50 text-white">
+                Our pollution tracker combines the power of technology and community action to monitor and combat pollution. From air quality to water safety, we provide the tools you need to make informed decisions and drive change
+              </p>
+
+              <div class="row my-5">
+                <div>
+                  <div>
+                    <h2 class="m-0 h5 text-white">Mission Statement</h2>
+                    <p class="text-white opacity-50">At CleanSphere, our mission is to empower individuals, communities, and organizations with real-time, data-driven insights to combat pollution and protect the planet. We aim to provide accessible, actionable information through innovative pollution tracking tools that promote environmental stewardship, inform policy decisions, and foster a global movement towards cleaner air, water, and ecosystems. Together, we strive to create a world where sustainable practices are the norm, and environmental health is prioritized for future generations.</p>
+                  </div>
+                </div>
+
+
+                <div class="col-lg-12 d-flex align-items-start mb-4">
+ <br> <br><br>
+                  <div>
+                    <h2 class="m-1 h5 text-white">Our Objectives</h2><br>
+
+                      <h5 class="m-0 h5 text-white">Track Pollution Accurately</h5>
+                    <p class="text-white opacity-50">Leverage cutting-edge technologies like IoT sensors, satellite imagery, and AI to provide precise, real-time pollution data that identifies pollution hotspots globally.</p>
+                  </div>
+                </div>
+                  <br>
+                <div class="col-lg-12 d-flex align-items-start">
+
+                  <div>
+                    <h5 class="m-0 h5 text-white">Empower Communities</h5>
+                    <p class="text-white opacity-50">Engage and equip individuals, local groups, and citizen scientists to actively monitor pollution in their areas and contribute valuable data that supports environmental action.</p>
+                  </div>
+                </div>
+                  <br>
+                   <br>
+
+                <div class="col-lg-12 d-flex align-items-start">
+
+                  <div>
+                    <h5 class="m-0 h5 text-white">Advocate for Change</h5>
+                    <p class="text-white opacity-50"> Provide key data insights that help influence policymakers, drive regulatory changes, and advocate for environmental policies that reduce pollution and its harmful effects.
+
+</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+
+    <!-- About 3 Section -->
+    <section id="about-3" class="about-3 section">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-between align-items-center">
+          <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
+            <img src="{% static 'assets/img/img_sq_5.png' %}" alt="Image" class="img-fluid">
+            <a href="https://www.youtube.com/watch?v=belXC_IoW4o" class="glightbox pulsating-play-btn">
+              <span class="play"><i class="bi bi-play-fill"></i></span>
+            </a>
+          </div>
+          <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="content-title mb-4">Why take care of the environment?</h2>
+            <p class="mb-4">
+             A clean environment directly contributes to better health.
+                Pollution, whether in the air, water, or soil, can lead to respiratory diseases, waterborne illnesses, and many other health issues.
+                Protecting the environment ensures cleaner air to breathe, safer water to drink, and healthier food sources.
+            </p>
+              <p>The environment is home to a diverse range of species, each playing an essential role in maintaining ecological balance.
+                  By protecting habitats and ecosystems, we help preserve biodiversity, ensuring the survival of plants and animals, some of which may have life-saving or life-enhancing properties for humans.</p>
+
+              <ul class="list-unstyled list-check">
+              <li>Would you like to learn more?</li>
+            </ul>
+
+            <p><a href="#" class="btn-cta">Get in touch</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About 3 Section -->
+
+
+    <!-- Recent Posts Section -->
+    <section id="recent-posts" class="recent-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Recent Posts</h2>
+        <p>Read on our recent blogs and impacts</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{% static 'assets/img/blog/img.png' %}" class="img-fluid w-75 h-75" alt="">
+                <span class="post-date"></span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">Why Monitoring Pollution Matters: Empowering Communities for a Cleaner Future</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Ephie Lumumba</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Nature</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="{% url 'blog-details' %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{% static 'assets/img/blog/img_1.png' %}" class="img-fluid w-100 h-100" alt="">
+                <span class="post-date"></span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">The Role of Citizen Science in Combating Pollution</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Purity Muli</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Nature</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="{% url 'blog-details' %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{% static 'assets/img/blog/img_4.png' %}" class="img-fluid w-100 h-100" alt="">
+                <span class="post-date"></span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">Innovative Technologies Fighting Pollution in 2024</h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Billy Otieno</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Nature</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="{% url 'blog-details' %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Recent Posts Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section light-background">
+
+      <div class="content">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <h3>Subscribe To Our Newsletter</h3>
+              <p class="opacity-50">
+               Would you like to learn more and be part of the solution?
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <form action="forms/newsletter.php" class="form-subscribe php-email-form">
+                <div class="form-group d-flex align-items-stretch">
+                  <input type="email" name="email" class="form-control h-100" placeholder="Enter your e-mail">
+                  <input type="submit" class="btn btn-secondary px-4" value="Subcribe">
+                </div>
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  Your subscription request has been sent. Thank you!
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Call To Action Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+              <span class="sitename">CleanSphere</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>PO BOX 488</p>
+              <p>00242-Kitengela, Kenya</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+254790611271</span></p>
+              <p><strong>Email:</strong> <span>info@cleansphere.com</span></p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About us</a></li>
+              <li><a href="{% url 'blog' %}">Blog</a></li>
+              <li><a href="{% url 'resources' %}">Resources</a></li>
+              <li><a href="{% url 'donate' %}">Donate</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+          </div>
+
+         <div class="social-links order-first order-lg-last col-lg-2 col-md-3">
+          <a href=""><i class="bi bi-twitter-x" ></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div>
+            © Copyright <strong><span>MyWebsite</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
+            Designed by <a href="#">Ephie Lumumba</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
